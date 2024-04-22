@@ -1,0 +1,97 @@
+Sure, here's a step-by-step guide to accomplish the tasks you've outlined:
+
+1. **Create git repository on git.epam.com/github.com:**
+   - Go to git.epam.com/github.com and create a new repository, let's call it `my_project`.
+
+2. **Clone using SSH keys:**
+   - Assuming you have your SSH keys set up, you can clone the repository using the SSH URL:
+     ```
+     git clone git@git.epam.com/github.com/your_username/my_project.git
+     ```
+
+3. **Push few commits in master branch:**
+   - Make some changes to your project files.
+   - Stage the changes and commit them:
+     ```
+     git add .
+     git commit -m "First commit"
+     ```
+   - Push the commit to the master branch:
+     ```
+     git push origin master
+     ```
+
+4. **Create a new test branch and push 2 commits inside:**
+   ```
+   git checkout -b test
+   ```
+   - Make some changes to your project files.
+   - Stage the changes and commit them:
+     ```
+     git add .
+     git commit -m "First commit on test branch"
+     git commit -m "Second commit on test branch"
+     ```
+   - Push the commits to the test branch:
+     ```
+     git push origin test
+     ```
+
+5. **Push one new commit in master branch:**
+   - Switch back to the master branch:
+     ```
+     git checkout master
+     ```
+   - Make some changes to your project files.
+   - Stage the changes and commit them:
+     ```
+     git add .
+     git commit -m "Second commit on master branch"
+     ```
+   - Push the commit to the master branch:
+     ```
+     git push origin master
+     ```
+
+6. **Merge test to "master":**
+   ```
+   git checkout master
+   git merge test
+   ```
+
+7. **Add 2 additional commits to test, 1 commit in master. Rebase "test" with new commits from "master":**
+   ```
+   git checkout test
+   ```
+   - Make some changes to your project files.
+   - Stage the changes and commit them:
+     ```
+     git add .
+     git commit -m "Third commit on test branch"
+     git commit -m "Fourth commit on test branch"
+     ```
+   - Rebase test with new commits from master:
+     ```
+     git rebase master
+     ```
+
+8. **Add 2 additional commits in test. Cherry-pick first commit to master. Revert the second commit:**
+   ```
+   git checkout test
+   ```
+   - Make some changes to your project files.
+   - Stage the changes and commit them:
+     ```
+     git add .
+     git commit -m "Fifth commit on test branch"
+     git commit -m "Sixth commit on test branch"
+     ```
+   - Cherry-pick the first commit to master:
+     ```
+     git checkout master
+     git cherry-pick <commit-hash>
+     ```
+   - Revert the second commit:
+     ```
+     git revert <commit-hash>
+     ```
