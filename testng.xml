@@ -16,4 +16,11 @@
 		</classes>
 
 	</test> <!-- Test -->
+
+
+	<test name="CalculatorTests">
+		<classes>
+			<class name="TestNGHomeTask.CalculatorTest"/>
+		</classes>
+	</test>
 </suite> <!-- Suite -->
