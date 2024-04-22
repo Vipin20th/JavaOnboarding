@@ -1,16 +1,17 @@
 package TestNGHomeTask;
 
 
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.DataProvider;
-import org.testng.annotations.Test;
+import com.aventstack.extentreports.Status;
+import org.testng.annotations.*;
+import report.ReportFactory;
 
 import static org.testng.Assert.assertThrows;
 import static org.testng.AssertJUnit.assertEquals;
 
 public class CalculatorTest {
     private Calculator calculator;
+
+
 
     @BeforeMethod
     public void setUp() {
@@ -26,11 +27,13 @@ public class CalculatorTest {
     @Test(groups = {"positive"})
     public void testAdditionPositive() {
         assertEquals(5, calculator.add(2, 3));
+        ReportFactory.getInstance().getLogger().info("add step pass");
     }
 
     @Test(groups = {"positive"})
     public void testSubtractionPositive() {
         assertEquals(2, calculator.subtract(5, 3));
+        ReportFactory.getInstance().getLogger().info("subtraction pass");
     }
 
     @Test(groups = {"positive"})
